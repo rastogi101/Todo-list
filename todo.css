@@ -1,0 +1,162 @@
+@charset "UTF-8";
+
+:root{
+    --bgColor: #FFFFFF;
+    --gradient1:  #07070e;
+    --gradient2:  #B06AB3;
+    --gradient3:  #4568DC;
+    --addButtonBg: #FA6AB3;
+    --addBtnTextColor: #FFFFFF;
+    --tickColor: #FFFFFF;
+  }
+  
+.flex-center, .add__item, .list__item-complete:before, body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+:root{
+  --bgColor: #FFFFFF;
+  --gradient1:  #07070e;
+  --gradient2:  #B06AB3;
+  --gradient3:  #4568DC;
+  --addButtonBg: #FA6AB3;
+  --addBtnTextColor: #FFFFFF;
+  --tickColor: #FFFFFF;
+}
+.flex-right, .add {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/*CONTAINERS*/
+body {
+  background: var(--bgColor);
+  height: 100vh;
+  margin: 0;
+}
+
+main {
+  background: #07070e;
+  background: linear-gradient(180deg, var(--gradient2) 20%, var(--gradient3) );
+  border-radius: 24px;
+  height: 480px;
+  width: 232px;
+  padding: 16px 24px 32px;
+  position: relative;
+  z-index: 1;
+  transition-duration: 0.5s;
+}
+
+main:hover{
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.3);
+  transition-duration: 0.5s;
+  transform: translateY(-5px);
+}
+
+
+/*TEXT*/
+h1,
+h2,
+ul,
+li {
+  color: #d5d5db;
+  font-family: "Open Sans", sans-serif;
+}
+
+h1 {
+  font-size: 12px;
+  font-weight: 100;
+  text-align: center;
+  margin: 16px 0 0;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 500;
+  text-align: center;
+  margin: 4px 0 24px;
+}
+
+/*LIST*/
+.list {
+  margin: 0;
+  padding: 0;
+}
+
+.list__item {
+  background: rgba(213, 213, 219, 0.1);
+  border-radius: 8px;
+  font-size: 12px;
+  list-style: none;
+  margin: 0 0 16px;
+  padding: 16px 16px 16px 48px;
+  position: relative;
+  cursor: pointer;
+}
+.list__item:before {
+  content: "";
+  border: 1px solid #d5d5db;
+  border-radius: 50%;
+  height: 16px;
+  width: 16px;
+  position: absolute;
+  top: 16px;
+  left: 16px;
+}
+.list__item:hover:before {
+  background: var(--tickColor);
+  transition-duration: 0.5s;
+}
+
+.list__item-complete:before {
+  content: "✓";
+  background-color: var(--tickColor);
+  border: 1px solid #07070e;
+  border-radius: 0px 6px 10px 3px;
+  transition-duration: 0.4s;
+  color: black;
+  font-size: 12px;
+}
+
+.list-nested {
+  font-size: 12px;
+  list-style: none;
+  margin: 4px 0;
+  padding: 0;
+}
+
+.list-nested__item:before {
+  content: "-";
+  padding: 0 4px;
+}
+
+/*ADD*/
+.add {
+  padding: 8px 0 8px;
+  position: absolute;
+  right: 24px;
+  bottom: 16px;
+}
+
+.add__item {
+  border-radius: 50%;
+  background: var(--addButtonBg);
+  color: var(--addBtnTextColor);
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  transition: height 0.3s ease, width 0.3s ease;
+}
+.add__item:hover {
+  height: 48px;
+  width: 48px;
+}
+
+@media screen and (max-width: 695px) {
+  body {
+    height: 104vh;
+  }
+}
